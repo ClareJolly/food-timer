@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/food-timer/static/js/runtime~main.27e04505.js"
   },
   {
-    "revision": "0368505d1c3146edd8de29f2a585951d",
+    "revision": "170c1b5ea457b3227233811561201b94",
     "url": "/food-timer/index.html"
   }
 ];
