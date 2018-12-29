@@ -110,7 +110,7 @@ timingsrows.push( <div key={a}><b>{this.state.timings[a].food}</b> start cooking
       <div className="App">
       Add up to 5 foods and cooking time
       {rows}
-      <div>Time to finish?<input type="time" name="endTime" placeholder="Time to finish?" value="17:00" onChange={this.handleChange} /></div>
+      <div>Time to finish?<input type="time" name="endTime" placeholder="Time to finish?" value="" onChange={this.handleChange} /></div>
       <button onClick={this.calculateTimes}>Go</button>
       <div>
 
