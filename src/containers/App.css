@@ -6,6 +6,17 @@ h1, h2, h3, h4 {
 
 }
 
+.late {
+  color: #e60000;
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 div, body, a, p {
   font-family: 'Nixie One', cursive;
 }

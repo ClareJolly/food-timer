@@ -10,11 +10,27 @@ class TimingList extends Component {
   super(props)
 
   this.state = {
-    timings:this.props.timings
+    timings:this.props.timings,
+    late: false
 
   }
 
   // this.updateTimings = this.updateTimings.bind(this);
+}
+
+checkLate() {
+  var now = new Date()
+  if(this.state.timings[0].ovenTime < now) {
+    console.log("too late")
+    this.setState({
+      late: true
+    })
+    // return "Too late to cook this"
+  }
+}
+
+componentDidMount(){
+  this.checkLate()
 }
 
 render() {
@@ -35,6 +51,7 @@ timingsrows.push( <div key={a}><b>{this.state.timings[a].food}</b> start cooking
 
 
 <div className="timingList">
+{this.state.late && <h2 className="late">Too late - better eat later or have something else</h2>}
 {timingsrows}
 
 </div>
@@ -44,7 +61,7 @@ timingsrows.push( <div key={a}><b>{this.state.timings[a].food}</b> start cooking
 
 
 
-    
+
   );
 }
 }

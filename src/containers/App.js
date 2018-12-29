@@ -8,6 +8,9 @@ import './App.css';
 class App extends Component {
 
   constructor(props) {
+
+    const listLength = 5
+
   super(props)
 
   this.state = {
@@ -31,7 +34,7 @@ class App extends Component {
     return (
       <div className="App">
       <Header />
-      {this.state.timings.length === 0 && <TimeForm updateTimings={this.updateTimings}/>}
+      {this.state.timings.length === 0 && <TimeForm updateTimings={this.updateTimings} listLength={this.listLength}/>}
       {this.state.timings.length > 0 && <TimingList timings={this.state.timings}/>}
       {this.state.timings.length > 0 && <div><button onClick={this.restart}>Start again</button></div>}
       </div>
