@@ -10,13 +10,7 @@ class TimeForm extends Component {
 
     console.log(this.props.timings)
     this.state = {
-      foodList:[
-        // {food:'',time:'',ovenTime:''},
-        // {food:'',time:'',ovenTime:''},
-        // {food:'',time:'',ovenTime:''},
-        // {food:'',time:'',ovenTime:''},
-        // {food:'',time:'',ovenTime:''}
-      ],
+      foodList:[],
       endTime:'17:00',
       timings:[]
     }
