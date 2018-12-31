@@ -7,6 +7,7 @@ class TimeForm extends Component {
   constructor(props) {
     super(props)
 
+    console.log(this.props.timings)
     this.state = {
       foodList:[
         {food:'',time:'',ovenTime:''},
@@ -46,6 +47,12 @@ class TimeForm extends Component {
     this.setState({ foodList: newFood });
   }
 
+  handleAddFood = () => {
+    this.setState({
+      foodList: this.state.foodList.concat([{ food: '',time:'', ovenTime:'' }])
+    });
+  }
+
   calculateTimesDynamic = () => {
     console.log("STATE:",this.state.foodList)
 
@@ -80,12 +87,28 @@ class TimeForm extends Component {
       timings:foodDetailsOrder,
       foodList: foodDetailsOrder
     })
-
+    this.props.toggleForm()
     this.props.updateTimings(foodDetailsOrder)
   }
 
   componentDidMount() {
+    var updatedFoodList = []
+    if (this.props.timings.length === 0) {
+      updatedFoodList = [{food:'',time:'',ovenTime:''},
+      {food:'',time:'',ovenTime:''},
+      {food:'',time:'',ovenTime:''},
+      {food:'',time:'',ovenTime:''},
+      {food:'',time:'',ovenTime:''}]
+    }
 
+    for (var i = 0; i < this.props.timings.length; ++i)
+    {
+      updatedFoodList.push(this.props.timings[i])
+    }
+
+    this.setState({
+      foodList: updatedFoodList
+    })
   }
 
   render() {
@@ -94,18 +117,21 @@ class TimeForm extends Component {
 
 
     return (
-      <div className="App">
-        Add up to 5 foods and cooking time
+      <div className="TimeForm">
+      {/*<div id="mainContent" className="container" >*/}
+        Add foods and cooking time
         {this.state.foodList.map((details, idx) => (
           // var foodRow = "food_"+i.toString()
-          <div key={idx}>
+          <div key={idx} className="grid-container">
+          <div className="food">
             <input
               type="text"
               placeholder={`What food?`}
               value={details.food}
               onChange={this.handleFoodChange(idx)}
             />
-
+            </div>
+            <div className="time">
             <input
               type="number"
               placeholder={`minutes to cook`}
@@ -113,7 +139,11 @@ class TimeForm extends Component {
               min="0"
               onChange={this.handleFoodTimeChange(idx)}
             />
+            </div>
+            <div className="add">
 
+            {idx === this.state.foodList.length-1 && <button className="addButton" onClick={this.handleAddFood}>Add</button>}
+            &nbsp;</div>
           </div>
         ))}
         <div>

@@ -18,7 +18,7 @@ h1, h2, h3, h4 {
 }
  input {
    padding: 5px 5px;
-  margin: 3px 3px 0 0 ;
+  margin: 1px ;
   /* display: inline-block; */
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -36,6 +36,26 @@ div {
   cursor: pointer;
   margin-bottom: 15px;
 
+}
+
+.food { grid-area: food; }
+.time { grid-area: time; }
+.add { grid-area: add; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'food time add';
+  grid-gap: 2px;
+  /* background-color: #2196F3; */
+  padding: 2px;
+}
+
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 2px 0;
+  font-size: 12px;
 }
 
 button {
@@ -59,6 +79,11 @@ button {
 button:hover {
   background-color: #4CAF50;
   color: white;
+}
+
+.addButton {
+  padding: 5px;
+  font-size: 10px;
 }
 .App {
   text-align: center;

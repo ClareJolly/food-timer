@@ -11,10 +11,12 @@ class App extends Component {
     super(props)
 
     this.state = {
-      timings:[]
+      timings:[],
+      showForm: true
     }
 
     this.updateTimings = this.updateTimings.bind(this);
+    this.toggleForm = this.toggleForm.bind(this);
   }
 
   updateTimings = (timings) => {
@@ -26,14 +28,25 @@ class App extends Component {
   restart = () => {
     window.location.reload()
   }
-  
+
+  toggleForm = () => {
+    this.setState({
+      showForm: !this.state.showForm
+    })
+  }
+
+  goBack = () => {
+    this.toggleForm()
+  }
+
   render() {
     return (
       <div className="App">
       <Header />
-      {this.state.timings.length === 0 && <TimeForm updateTimings={this.updateTimings} listLength={this.listLength}/>}
-      {this.state.timings.length > 0 && <TimingList timings={this.state.timings}/>}
-      {this.state.timings.length > 0 && <div><button onClick={this.restart}>Start again</button></div>}
+      {this.state.showForm && <TimeForm timings={this.state.timings} updateTimings={this.updateTimings} toggleForm={this.toggleForm} listLength={this.listLength}/>}
+      {!this.state.showForm && <TimingList timings={this.state.timings}/>}
+      {!this.state.showForm && <div><button onClick={this.goBack}>Back</button></div>}
+      {!this.state.showForm && <div><button onClick={this.restart}>Start again</button></div>}
       </div>
     );
   }
