@@ -16,13 +16,20 @@ h1, h2, h3, h4 {
     opacity: 0;
   }
 }
-
+ input {
+   padding: 5px 5px;
+  margin: 3px 3px 0 0 ;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* box-sizing: border-box; */
+ }
 div, body, a, p {
   font-family: 'Nixie One', cursive;
 }
 
 div {
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .recipeDetails {
@@ -55,6 +62,8 @@ button:hover {
 }
 .App {
   text-align: center;
+  margin: 10px;
+  /* padding: 10px; */
 }
 
 .App-logo {
