@@ -1,13 +1,13 @@
 {
-  "main.css": "/food-timer/static/css/main.61e4540a.chunk.css",
-  "main.js": "/food-timer/static/js/main.8bd5acb4.chunk.js",
-  "main.js.map": "/food-timer/static/js/main.8bd5acb4.chunk.js.map",
+  "main.css": "/food-timer/static/css/main.370b0ce5.chunk.css",
+  "main.js": "/food-timer/static/js/main.750272ff.chunk.js",
+  "main.js.map": "/food-timer/static/js/main.750272ff.chunk.js.map",
   "static/js/1.037c5570.chunk.js": "/food-timer/static/js/1.037c5570.chunk.js",
   "static/js/1.037c5570.chunk.js.map": "/food-timer/static/js/1.037c5570.chunk.js.map",
   "runtime~main.js": "/food-timer/static/js/runtime~main.27e04505.js",
   "runtime~main.js.map": "/food-timer/static/js/runtime~main.27e04505.js.map",
-  "static/css/main.61e4540a.chunk.css.map": "/food-timer/static/css/main.61e4540a.chunk.css.map",
+  "static/css/main.370b0ce5.chunk.css.map": "/food-timer/static/css/main.370b0ce5.chunk.css.map",
   "index.html": "/food-timer/index.html",
-  "precache-manifest.3c26fa6963ed8dfbfaf3a019a27d5cf6.js": "/food-timer/precache-manifest.3c26fa6963ed8dfbfaf3a019a27d5cf6.js",
+  "precache-manifest.5ef17a718d947d25da9473de8d33eecb.js": "/food-timer/precache-manifest.5ef17a718d947d25da9473de8d33eecb.js",
   "service-worker.js": "/food-timer/service-worker.js"
 }
