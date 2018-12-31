@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ade54fbca3b2d97cc490",
-    "url": "/food-timer/static/css/main.664277e8.chunk.css"
+    "revision": "8bd5acb45272d51b689a",
+    "url": "/food-timer/static/css/main.61e4540a.chunk.css"
   },
   {
-    "revision": "ade54fbca3b2d97cc490",
-    "url": "/food-timer/static/js/main.ade54fbc.chunk.js"
+    "revision": "8bd5acb45272d51b689a",
+    "url": "/food-timer/static/js/main.8bd5acb4.chunk.js"
   },
   {
     "revision": "037c557007f9d4864314",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/food-timer/static/js/runtime~main.27e04505.js"
   },
   {
-    "revision": "a00ccb4e209e19f1e9adabe777e970f0",
+    "revision": "dbf7b7595ebfe53dd998e7a715c8041f",
     "url": "/food-timer/index.html"
   }
 ];
