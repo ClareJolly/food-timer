@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/food-timer/precache-manifest.5225b86a7a88651133eba458b9df595e.js"
+  "/food-timer/precache-manifest.3cb476df14c30b0826433810943c4082.js"
 );
 
 workbox.clientsClaim();
