@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Grid from 'react-css-grid'
+// import TimeFields from '../components/TimeFields'
 import './App.css';
 
 class TimeForm extends Component {
@@ -10,16 +11,17 @@ class TimeForm extends Component {
     console.log(this.props.timings)
     this.state = {
       foodList:[
-        {food:'',time:'',ovenTime:''},
-        {food:'',time:'',ovenTime:''},
-        {food:'',time:'',ovenTime:''},
-        {food:'',time:'',ovenTime:''},
-        {food:'',time:'',ovenTime:''}
+        // {food:'',time:'',ovenTime:''},
+        // {food:'',time:'',ovenTime:''},
+        // {food:'',time:'',ovenTime:''},
+        // {food:'',time:'',ovenTime:''},
+        // {food:'',time:'',ovenTime:''}
       ],
       endTime:'17:00',
       timings:[]
     }
-
+    this.handleFoodChange = this.handleFoodChange.bind(this);
+    this.handleFoodTimeChange = this.handleFoodTimeChange.bind(this);
   }
 
   handleChange = (event) => {
@@ -29,6 +31,7 @@ class TimeForm extends Component {
   }
 
   handleFoodChange = (idx) => (evt) => {
+    console.log(idx)
       const newFood = this.state.foodList.map((details, sidx) => {
         if (idx !== sidx) return details;
         return { ...details, food: evt.target.value };
@@ -53,52 +56,62 @@ class TimeForm extends Component {
     });
   }
 
-  calculateTimesDynamic = () => {
-    console.log("STATE:",this.state.foodList)
-
+  cleanFoodList = () => {
     var foods = this.state.foodList.filter(f => f.food !== "")
-    console.log(foods)
+    // console.log(foods)
     var foodDetailsOrder = foods.sort(function(a, b) {
       return a.time - b.time;
     });
 
-    foodDetailsOrder = foodDetailsOrder.reverse()
+    return foodDetailsOrder.reverse()
+  }
 
+  getEndTime = () => {
     var time = this.state.endTime.split(':')
 
     const now = new Date()
     const end = new Date(now.getFullYear(), now.getMonth(), now.getDate(), time[0], time[1]);
-    var endDate = end;
+    return end;
+  }
 
-
+  setOventimes = (foodDetailsOrder,endTime) => {
     for (var x = 0; x < foodDetailsOrder.length; ++x) {
-      var startdate = new Date(endDate);
+      var startdate = new Date(endTime);
 
       var durationInMinutes = foodDetailsOrder[x].time;
 
-      startdate.setMinutes(endDate.getMinutes() - durationInMinutes);
+      startdate.setMinutes(endTime.getMinutes() - durationInMinutes);
       foodDetailsOrder[x].ovenTime = startdate;
     // console.log(foodDetailsOrder[x].food, startdate)
 
     }
-    console.log("FINAL",foodDetailsOrder)
+    return foodDetailsOrder
+  }
 
+  saveFinalTimings = (foodDetailsOrder) => {
     this.setState({
       timings:foodDetailsOrder,
       foodList: foodDetailsOrder
     })
+  }
+
+  calculateTimesDynamic = () => {
+
+    var foodDetailsOrder = this.cleanFoodList()
+    var endTime = this.getEndTime();
+
+    this.setOventimes(foodDetailsOrder,endTime)
+    this.saveFinalTimings(foodDetailsOrder)
     this.props.toggleForm()
     this.props.updateTimings(foodDetailsOrder)
   }
 
-  componentDidMount() {
+  setInitialFoodList = () => {
     var updatedFoodList = []
     if (this.props.timings.length === 0) {
-      updatedFoodList = [{food:'',time:'',ovenTime:''},
-      {food:'',time:'',ovenTime:''},
-      {food:'',time:'',ovenTime:''},
-      {food:'',time:'',ovenTime:''},
-      {food:'',time:'',ovenTime:''}]
+      for (var a = 0; a < 5;++a){
+        updatedFoodList.push({food:'',time:'',ovenTime:''})
+      }
     }
 
     for (var i = 0; i < this.props.timings.length; ++i)
@@ -111,6 +124,10 @@ class TimeForm extends Component {
     })
   }
 
+  componentDidMount() {
+    this.setInitialFoodList()
+  }
+
   render() {
 
     console.log(this.state.foodList)
@@ -120,9 +137,9 @@ class TimeForm extends Component {
       <div className="TimeForm">
       {/*<div id="mainContent" className="container" >*/}
         <h3>Add foods and cooking time</h3>
+
         {this.state.foodList.map((details, idx) => (
-          // var foodRow = "food_"+i.toString()
-          // <div key={idx} >
+        // <TimeFields idx={idx} foodList={this.state.foodList} handleFoodTimeChange={this.handleFoodTimeChange} handleFoodChange={this.handleFoodChange} />
           <Grid
           key={idx}
         width={24}
@@ -144,17 +161,13 @@ class TimeForm extends Component {
             />
             {idx === this.state.foodList.length-1 && <button className="addButton" onClick={this.handleAddFood}>Add</button>}
             </div>
-            {/*// <div className="rightStyle">
-            //
-            //
-            // &nbsp;
-            // </div>*/}
+
             </Grid>
-            // </div>
+
 
         ))}
         <div>
-          <label htmlForm="endTime" >Time to finish?</label>
+          <label htmlFor="endTime" >Time to finish?</label>
           <input type="time" name="endTime" id="endTime" className="timefield" onChange={this.handleChange} />
         </div>
 
