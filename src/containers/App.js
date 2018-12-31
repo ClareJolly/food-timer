@@ -8,18 +8,14 @@ import './App.css';
 class App extends Component {
 
   constructor(props) {
+    super(props)
 
-    const listLength = 5
+    this.state = {
+      timings:[]
+    }
 
-  super(props)
-
-  this.state = {
-    timings:[]
-
+    this.updateTimings = this.updateTimings.bind(this);
   }
-
-  this.updateTimings = this.updateTimings.bind(this);
-}
 
   updateTimings = (timings) => {
     this.setState({
@@ -30,6 +26,7 @@ class App extends Component {
   restart = () => {
     window.location.reload()
   }
+  
   render() {
     return (
       <div className="App">
