@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Grid from 'react-css-grid'
 import './App.css';
 
 class TimeForm extends Component {
@@ -122,16 +122,19 @@ class TimeForm extends Component {
         Add foods and cooking time
         {this.state.foodList.map((details, idx) => (
           // var foodRow = "food_"+i.toString()
-          <div key={idx} className="grid-container">
-          <div className="food">
-            <input
+          // <div key={idx} >
+          <Grid
+          key={idx}
+        width={100}
+        gap={30}>
+
+            <div><input
               type="text"
               placeholder={`What food?`}
               value={details.food}
               onChange={this.handleFoodChange(idx)}
             />
-            </div>
-            <div className="time">
+            </div><div>
             <input
               type="number"
               placeholder={`minutes to cook`}
@@ -139,12 +142,14 @@ class TimeForm extends Component {
               min="0"
               onChange={this.handleFoodTimeChange(idx)}
             />
-            </div>
-            <div className="add">
+            </div><div className="addbtndiv">
 
             {idx === this.state.foodList.length-1 && <button className="addButton" onClick={this.handleAddFood}>Add</button>}
-            &nbsp;</div>
-          </div>
+            &nbsp;
+            </div>
+            </Grid>
+            // </div>
+
         ))}
         <div>
           Time to finish?
