@@ -119,7 +119,7 @@ class TimeForm extends Component {
     return (
       <div className="TimeForm">
       {/*<div id="mainContent" className="container" >*/}
-        Add foods and cooking time
+        <h3>Add foods and cooking time</h3>
         {this.state.foodList.map((details, idx) => (
           // var foodRow = "food_"+i.toString()
           // <div key={idx} >
@@ -154,8 +154,8 @@ class TimeForm extends Component {
 
         ))}
         <div>
-          Time to finish?
-          <input type="time" name="endTime" onChange={this.handleChange} />
+          <label htmlForm="endTime" >Time to finish?</label>
+          <input type="time" name="endTime" id="endTime" className="timefield" onChange={this.handleChange} />
         </div>
 
         <button onClick={this.calculateTimesDynamic}>Go</button>

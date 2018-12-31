@@ -28,6 +28,11 @@ h1, h2, h3, h4 {
 
   width: 120px
  }
+
+ .timefield {
+   width:60px;
+   padding: 2px 2px;
+ }
 div, body, a, p {
   font-family: 'Nixie One', cursive;
   font-weight:bolder;
@@ -51,7 +56,7 @@ button {
   background-color: #fff; /* Green */
   /* border: none; */
   color: black;
-  padding: 10px;
+  padding: 7px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -77,6 +82,10 @@ button:hover {
 
 .addbtndiv {
   width:50px;
+}
+label {
+  font-size: 14px;
+  margin-right:5px;
 }
 
 .App {
