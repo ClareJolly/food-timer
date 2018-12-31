@@ -71,6 +71,7 @@ button:hover {
 
 .addButton {
   padding: 5px;
+  margin-left: 10px;
   font-size: 10px;
 }
 
@@ -86,9 +87,27 @@ button:hover {
 }
 
 .TimeForm {
-  text-align: center;
+  /* text-align: center; */
   /* width:400px; */
   /* margin:0px 200px 0px 200px */
+}
+
+.leftStyle {
+    text-align:right;
+    padding: 2px 2px 2px 2px;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+  }
+
+.rightStyle {
+  text-align:left;
+  padding: 2px 2px 2px 2px;
+}
+
+.centerStyle{
+  text-align:center;
+  padding: 2px 2px 2px 2px;
+  text-transform: uppercase;
 }
 
 .App-logo {

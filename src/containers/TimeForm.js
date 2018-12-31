@@ -125,16 +125,16 @@ class TimeForm extends Component {
           // <div key={idx} >
           <Grid
           key={idx}
-        width={100}
-        gap={30}>
+        width={24}
+        gap={24}>
 
-            <div><input
+            <div className="leftStyle"><input
               type="text"
               placeholder={`What food?`}
               value={details.food}
               onChange={this.handleFoodChange(idx)}
             />
-            </div><div>
+            </div><div className="rightStyle">
             <input
               type="number"
               placeholder={`minutes to cook`}
@@ -142,11 +142,13 @@ class TimeForm extends Component {
               min="0"
               onChange={this.handleFoodTimeChange(idx)}
             />
-            </div><div className="addbtndiv">
-
             {idx === this.state.foodList.length-1 && <button className="addButton" onClick={this.handleAddFood}>Add</button>}
-            &nbsp;
             </div>
+            {/*// <div className="rightStyle">
+            //
+            //
+            // &nbsp;
+            // </div>*/}
             </Grid>
             // </div>
 
