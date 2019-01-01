@@ -8,6 +8,7 @@
     "node": "11.0.0"
   },
   "dependencies": {
+    "eslint": "^5.11.1",
     "gh-pages": "^2.0.1",
     "react": "^16.7.0",
     "react-css-grid": "^2.0.0-0",
