@@ -10,5 +10,5 @@ To use it yourself, clone the repo and run `npm install` and `npm start`
 ----------------
 
 It's also deployed at the following urls:
-<!-- - https://food-timer.herokuapp.com/ -->
+- https://food-timer.herokuapp.com/
 - https://clarejolly.github.io/food-timer/
