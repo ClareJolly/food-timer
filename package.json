@@ -3,12 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://clarejolly.github.io/food-timer/",
-  "engines": {
-    "npm": "6.4.1",
-    "node": "11.0.0"
-  },
   "dependencies": {
-    "eslint": "^5.11.1",
     "gh-pages": "^2.0.1",
     "react": "^16.7.0",
     "react-css-grid": "^2.0.0-0",
