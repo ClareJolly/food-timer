@@ -7,8 +7,8 @@ class TimeForm extends Component {
 
   constructor(props) {
     super(props)
-
-    console.log(this.props.timings)
+    // const listLength = 5
+    // console.log(this.props.timings)
     this.state = {
       foodList:[],
       endTime:'17:00',
@@ -18,6 +18,8 @@ class TimeForm extends Component {
     this.handleFoodTimeChange = this.handleFoodTimeChange.bind(this);
   }
 
+
+  
   handleChange = (event) => {
     this.setState({
       [event.target.name] : event.target.value
@@ -124,7 +126,8 @@ class TimeForm extends Component {
 
   render() {
 
-    console.log(this.state.foodList)
+
+    // console.log(this.state.foodList)
 
 
     return (

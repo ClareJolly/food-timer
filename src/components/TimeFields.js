@@ -40,7 +40,7 @@ class TimeFields extends Component {
             <div className="leftStyle"><input
             name="food"
               type="text"
-              placeholder={`What food?`}
+              placeholder={`What food TEST?`}
               value={this.state.food}
               // {/*onChange={this.props.handleFoodChange}*/}
               onChange={() => this.props.handleFoodChange(this.props.idx)}
