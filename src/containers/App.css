@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Monoton|Nixie+One|Syncopate');
 
-
 h1, h2, h3, h4 {
   font-family: 'Syncopate', sans-serif;
-
 }
 
 .late {
@@ -16,26 +14,27 @@ h1, h2, h3, h4 {
     opacity: 0;
   }
 }
- input {
-   padding: 5px 5px;
-  margin: 1px ;
+
+input {
+  padding: 5px 5px;
+  margin: 1px;
   /* display: inline-block; */
   border: 1px solid #ccc;
   border-radius: 4px;
   /* box-sizing: border-box; */
   font-family: 'Nixie One', cursive;
-  font-weight:bolder;
-
+  font-weight: bolder;
   width: 120px
- }
+}
 
- .timefield {
-   width:60px;
-   padding: 2px 2px;
- }
+.timefield {
+  width: 60px;
+  padding: 2px 2px;
+}
+
 div, body, a, p {
   font-family: 'Nixie One', cursive;
-  font-weight:bolder;
+  font-weight: bolder;
 }
 
 div {
@@ -45,15 +44,13 @@ div {
 .recipeDetails {
   cursor: pointer;
   margin-bottom: 15px;
-
 }
-
-
 
 button {
   font-family: 'Nixie One', cursive;
-  font-weight:bolder;
-  background-color: #fff; /* Green */
+  font-weight: bolder;
+  background-color: #fff;
+  /* Green */
   /* border: none; */
   color: black;
   padding: 7px;
@@ -64,7 +61,8 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
   transition-duration: 0.4s;
   border: 2px solid #4CAF50;
 }
@@ -81,11 +79,12 @@ button:hover {
 }
 
 .addbtndiv {
-  width:50px;
+  width: 50px;
 }
+
 label {
   font-size: 14px;
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 .App {
@@ -102,19 +101,19 @@ label {
 }
 
 .leftStyle {
-    text-align:right;
-    padding: 2px 2px 2px 2px;
-    /* font-weight: bold; */
-    text-transform: uppercase;
-  }
+  text-align: right;
+  padding: 2px 2px 2px 2px;
+  /* font-weight: bold; */
+  text-transform: uppercase;
+}
 
 .rightStyle {
-  text-align:left;
+  text-align: left;
   padding: 2px 2px 2px 2px;
 }
 
-.centerStyle{
-  text-align:center;
+.centerStyle {
+  text-align: center;
   padding: 2px 2px 2px 2px;
   text-transform: uppercase;
 }
@@ -143,6 +142,7 @@ label {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import logo from './logo.svg';
-import Header from '../components/Header'
-import TimeForm from './TimeForm'
-import TimingList from '../components/TimingList'
-import './App.css';
+import Header from "../components/Header";
+import TimeForm from "./TimeForm";
+import TimingList from "../components/TimingList";
+import "./App.css";
 
 class App extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      timings:[],
+      timings: [],
       showForm: true
-    }
+    };
 
     this.updateTimings = this.updateTimings.bind(this);
     this.toggleForm = this.toggleForm.bind(this);
@@ -22,31 +21,46 @@ class App extends Component {
   updateTimings = (timings) => {
     this.setState({
       timings: timings
-    })
-  }
+    });
+  };
 
   restart = () => {
-    window.location.reload()
-  }
+    window.location.reload();
+  };
 
   toggleForm = () => {
     this.setState({
       showForm: !this.state.showForm
-    })
-  }
+    });
+  };
 
   goBack = () => {
-    this.toggleForm()
-  }
+    this.toggleForm();
+  };
 
   render() {
     return (
       <div className="App">
-      <Header />
-      {this.state.showForm && <TimeForm timings={this.state.timings} updateTimings={this.updateTimings} toggleForm={this.toggleForm} listLength={this.listLength}/>}
-      {!this.state.showForm && <TimingList timings={this.state.timings}/>}
-      {!this.state.showForm && <div><button onClick={this.goBack}>Back</button></div>}
-      {!this.state.showForm && <div><button onClick={this.restart}>Start again</button></div>}
+        <Header />
+        {this.state.showForm && (
+          <TimeForm
+            timings={this.state.timings}
+            updateTimings={this.updateTimings}
+            toggleForm={this.toggleForm}
+            listLength={this.listLength}
+          />
+        )}
+        {!this.state.showForm && <TimingList timings={this.state.timings} />}
+        {!this.state.showForm && (
+          <div>
+            <button onClick={this.goBack}>Back</button>
+          </div>
+        )}
+        {!this.state.showForm && (
+          <div>
+            <button onClick={this.restart}>Start again</button>
+          </div>
+        )}
       </div>
     );
   }
