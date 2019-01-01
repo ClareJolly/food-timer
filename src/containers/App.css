@@ -58,7 +58,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
-  margin: 4px 2px;
+  /* margin: 4px 2px; */
   cursor: pointer;
   border-radius: 4px;
   -webkit-transition-duration: 0.4s;
@@ -73,10 +73,16 @@ button:hover {
 }
 
 .addButton {
-  padding: 5px;
+  padding: 1px;
   margin-left: 10px;
   font-size: 10px;
+
 }
+
+/* .addbutton:hover {
+  background-color: white !important;
+  color: white;
+} */
 
 .addbtndiv {
   width: 50px;
@@ -105,17 +111,20 @@ label {
   padding: 2px 2px 2px 2px;
   /* font-weight: bold; */
   text-transform: uppercase;
+	vertical-align:top;
 }
 
 .rightStyle {
   text-align: left;
   padding: 2px 2px 2px 2px;
+	vertical-align:top;
 }
 
 .centerStyle {
   text-align: center;
   padding: 2px 2px 2px 2px;
   text-transform: uppercase;
+	vertical-align:top;
 }
 
 .App-logo {

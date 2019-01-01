@@ -154,8 +154,9 @@ class TimeForm extends Component {
               />
               {idx === this.state.foodList.length - 1 && (
                 <button className="addButton" onClick={this.handleAddFood}>
-                  Add
-                </button>
+                  <img src="/plus-1270001_640.png" width="13px" alt="Add"/>
+									Add{/**/}
+								</button>
               )}
             </div>
           </Grid>
